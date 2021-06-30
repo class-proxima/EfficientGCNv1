@@ -45,20 +45,20 @@ Before training and evaluating, there are some parameters should be noticed.
 
 * (1) **'--config'** or **'-c'**: The config of EfficientGCN. You must use this parameter in the command line or the program will output an error. There are 12 configs given in the **configs** folder, which can be illustrated in the following tabel.
 
-| config    | 2001  | 2002  | 2003    | 2004    |
-| :-------: | :---: | :---: | :-----: | :-----: |
-| model     | B0    | B0    | B0      | B0      |
-| benchmark | Xsub  | Xview | Xsub120 | Xset120 |
+| config    | 2001   | 2002   | 2003     | 2004     |
+| :-------: | :----: | :----: | :------: | :------: |
+| model     | B0     | B0     | B0       | B0       |
+| benchmark | X-sub  | X-view | X-sub120 | X-set120 |
 
-| config    | 2005  | 2006  | 2007    | 2008    |
-| :-------: | :---: | :---: | :-----: | :-----: |
-| model     | B2    | B2    | B2      | B2      |
-| benchmark | Xsub  | Xview | Xsub120 | Xset120 |
+| config    | 2005   | 2006   | 2007     | 2008     |
+| :-------: | :----: | :----: | :------: | :------: |
+| model     | B2     | B2     | B2       | B2       |
+| benchmark | X-sub  | X-view | X-sub120 | X-set120 |
 
-| config    | 2009  | 2010  | 2011    | 2012    |
-| :-------: | :---: | :---: | :-----: | :-----: |
-| model     | B4    | B4    | B4      | B4      |
-| benchmark | Xsub  | Xview | Xsub120 | Xset120 |
+| config    | 2009   | 2010   | 2011     | 2012     |
+| :-------: | :----: | :----: | :------: | :------: |
+| model     | B4     | B4     | B4       | B4       |
+| benchmark | X-sub  | X-view | X-sub120 | X-set120 |
 
 * (2) **'--work_dir'** or **'-w'**: The path to workdir, for saving checkpoints and other running files. Default is **'./workdir'**.
 
@@ -138,11 +138,11 @@ where **'-ex'** can be removed if the data file **'extraction_`<config>`.npz'** 
 
 Top-1 Accuracy for the provided models on **NTU RGB+D 60 & 120** datasets.
 
-| models          | FLOPs  | parameters | NTU Xsub  | NTU Xview | NTU Xsub120 | NTU Xset120 |
-| :-------------: | :----: | :--------: | :-------: | :-------: | :---------: | :---------: |
-| EfficientGCN-B0 | 3.08G  | 0.32M      | 89.9%     | 94.7%     | 85.9%       | 84.3%       |
-| EfficientGCN-B2 | 6.12G  | 0.79M      | 90.9%     | 95.5%     | 87.9%       | 88.0%       |
-| EfficientGCN-B4 | 15.24G | 2.03M      | **91.7%** | **95.7%** | **88.3%**   | **89.1%**   |
+| models          | FLOPs  | parameters | NTU X-sub  | NTU X-view | NTU X-sub120 | NTU X-set120 |
+| :-------------: | :----: | :--------: | :--------: | :--------: | :----------: | :----------: |
+| EfficientGCN-B0 | 3.08G  | 0.32M      | 89.9%      | 94.7%      | 85.9%        | 84.3%        |
+| EfficientGCN-B2 | 6.12G  | 0.79M      | 90.9%      | 95.5%      | 87.9%        | 88.0%        |
+| EfficientGCN-B4 | 15.24G | 2.03M      | **91.7%**  | **95.7%**  | **88.3%**    | **89.1%**    |
 
 ## 6 Citation and Contact
 
