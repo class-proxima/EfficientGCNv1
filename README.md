@@ -2,7 +2,7 @@
 
 ## 1 Paper Details
 
-Yi-Fan Song, Zhang Zhang, Caifeng Shan and Liang Wang. **EfficientGCN: Constructing Stronger and Faster Baselines for Skeleton-based Action Recognition**. Submitted to IEEE T-PAMI, 2021. [[Arxiv Preprint]](https://arxiv.org/pdf/2106.xxxxx.pdf)
+Yi-Fan Song, Zhang Zhang, Caifeng Shan and Liang Wang. **EfficientGCN: Constructing Stronger and Faster Baselines for Skeleton-based Action Recognition**. Submitted to IEEE T-PAMI, 2021. [[Arxiv Preprint]](https://arxiv.org/pdf/2106.15125.pdf)
 
 The following pictures are the pipeline of EfficientGCN and the illustration of ST-JointAtt layer, respectively.
 <div align="center">
@@ -153,7 +153,7 @@ Please cite our paper when you use this code in your reseach.
 @article{song2021efficientgcn,
   author    = {Song, Yi-Fan and Zhang, Zhang and Shan, Caifeng and Wang, Liang},
   title     = {EfficientGCN: Constructing Stronger and Faster Baselines for Skeleton-based Action Recognition},
-  journal   = {arXiv:2106.xxxxx},
+  journal   = {arXiv:2106.15125},
   year      = {2021},
 }
 
