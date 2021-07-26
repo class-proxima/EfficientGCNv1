@@ -38,7 +38,7 @@ There are 302 samples of **NTU RGB+D 60** and 532 samples of **NTU RGB+D 120** n
 
 Several pretrained models are provided, which include **EfficientGCN-B0**, **EfficientGCN-B2**, and **EfficientGCN-B4** for the **cross-subject (X-sub)** and **cross-view (X-view)** benchmarks of the **NTU RGB+D 60** dataset and the **cross-subject (X-sub120)** and **cross-setup (X-set120)** benchmarks of the **NTU RGB+D 120** dataset.
 
-These models can be downloaded from [BaiduYun](https://pan.baidu.com/s/1gVjBx4p3lwPpyd_QUI1TiA) (Extraction code: **1c5x**) or [GoogleDrive](https://drive.google.com/drive/folders/1HpvkKyfmmOCzuJXemtDxQCgGGQmWMvj4?usp=sharing).
+These models can be downloaded from [BaiduYun]() (Extraction code: **1c5x**) or [GoogleDrive](https://drive.google.com/drive/folders/1HpvkKyfmmOCzuJXemtDxQCgGGQmWMvj4?usp=sharing).
 
 
 ## 3 Parameters
@@ -150,7 +150,7 @@ Top-1 Accuracy for the provided models on **NTU RGB+D 60 & 120** datasets.
 
 If you have any question, please send e-mail to `yifan.song@cripac.ia.ac.cn`.
 
-Please cite our paper when you use this code in your reseach.
+Please cite our paper when you use this code in your research.
 ```
 @article{song2021efficientgcn,
   author    = {Song, Yi-Fan and Zhang, Zhang and Shan, Caifeng and Wang, Liang},
