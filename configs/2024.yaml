@@ -2,7 +2,7 @@
 gpus: [0,1]
 seed: 1
 debug: False
-pretrained_path:
+pretrained_path: 
 work_dir: ./workdir
 no_progress_bar: False
 
@@ -17,7 +17,7 @@ dataset: ntu-xset120
 dataset_args:
   ntu:
     train_batch_size: 16
-    eval_batch_size: 16
+    eval_batch_size: 32
     num_frame: 288
     inputs: JVB
     transform: False
@@ -26,19 +26,19 @@ dataset_args:
     ntu120_path: ./data/raw_skeleton/nturgbd_skeletons_s018_to_s032
 
 # Model
-model_type: EfficientGCN-B2
+model_type: EfficientGCN-B4
 model_args:
   stem_channel: 64
   block_args: [[48,1,0.5],[24,1,0.5],[64,2,1],[128,2,1]]
   fusion_stage: 2
   act_type: swish
   att_type: stja
-  layer_type: SG
+  layer_type: Sep
   drop_prob: 0.25
   kernel_size: [5,2]
   scale_args: [1.2,1.35]
-  expand_ratio: 0
-  reduct_ratio: 2
+  expand_ratio: 2
+  reduct_ratio: 4
   bias: True
   edge: True
 

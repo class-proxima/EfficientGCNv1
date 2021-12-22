@@ -2,7 +2,7 @@
 gpus: [0,1]
 seed: 1
 debug: False
-pretrained_path: 
+pretrained_path:
 work_dir: ./workdir
 no_progress_bar: False
 
@@ -16,14 +16,14 @@ visualization_frames: []
 dataset: ntu-xsub120
 dataset_args:
   ntu:
-    train_batch_size: 32
-    eval_batch_size: 32
+    train_batch_size: 16
+    eval_batch_size: 16
     num_frame: 288
     inputs: JVB
     transform: False
-    root_folder: /data/yifan.song/dataset/NTU_skeleton/npy_dataset
-    ntu60_path: /data/yifan.song/dataset/NTU_skeleton/nturgbd_skeletons_s001_to_s017
-    ntu120_path: /data/yifan.song/dataset/NTU_skeleton/nturgbd_skeletons_s018_to_s032
+    root_folder: ./data/npy_dataset
+    ntu60_path: ./data/raw_skeleton/nturgbd_skeletons_s001_to_s017
+    ntu120_path: ./data/raw_skeleton/nturgbd_skeletons_s018_to_s032
 
 # Model
 model_type: EfficientGCN-B2
@@ -33,12 +33,12 @@ model_args:
   fusion_stage: 2
   act_type: swish
   att_type: stja
-  layer_type: Sep
+  layer_type: SG
   drop_prob: 0.25
   kernel_size: [5,2]
   scale_args: [1.2,1.35]
-  expand_ratio: 2
-  reduct_ratio: 4
+  expand_ratio: 0
+  reduct_ratio: 2
   bias: True
   edge: True
 

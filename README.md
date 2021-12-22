@@ -20,7 +20,7 @@ The following pictures are the pipeline of EfficientGCN and the illustration of 
 
 ### 2.1 Libraries
 
-This code is based on [Python3](https://www.anaconda.com/) (anaconda, >=3.5) and [PyTorch](http://pytorch.org/) (>=1.6.0).
+This code is based on [Python3](https://www.anaconda.com/) (anaconda, >= 3.5) and [PyTorch](http://pytorch.org/) (>= 1.6.0).
 
 Other Python libraries are presented in the **'scripts/requirements.txt'**, which can be installed by 
 ```
@@ -36,9 +36,9 @@ There are 302 samples of **NTU RGB+D 60** and 532 samples of **NTU RGB+D 120** n
 
 ### 2.3 Pretrained Models
 
-Several pretrained models are provided, which include **EfficientGCN-B0**, **EfficientGCN-B2**, and **EfficientGCN-B4** for the **cross-subject (X-sub)** and **cross-view (X-view)** benchmarks of the **NTU RGB+D 60** dataset and the **cross-subject (X-sub120)** and **cross-setup (X-set120)** benchmarks of the **NTU RGB+D 120** dataset.
+Several pretrained models are provided, which include **EfficientGCN-B0**, **EfficientGCN-B2**, and **EfficientGCN-B4** with **SG** and **EpSep** layers for the **cross-subject (X-sub)** and **cross-view (X-view)** benchmarks of the **NTU RGB+D 60** dataset and the **cross-subject (X-sub120)** and **cross-setup (X-set120)** benchmarks of the **NTU RGB+D 120** dataset.
 
-These models can be downloaded from [BaiduYun]() (Extraction code: **1c5x**) or [GoogleDrive](https://drive.google.com/drive/folders/1HpvkKyfmmOCzuJXemtDxQCgGGQmWMvj4?usp=sharing).
+These models can be downloaded from [BaiduYun](https://pan.baidu.com/s/1gVjBx4p3lwPpyd_QUI1TiA) (Extraction code: **1c5x**) or [GoogleDrive](https://drive.google.com/drive/folders/1HpvkKyfmmOCzuJXemtDxQCgGGQmWMvj4?usp=sharing).
 
 
 ## 3 Parameters
@@ -47,19 +47,40 @@ Before training and evaluating, there are some parameters should be noticed.
 
 * (1) **'--config'** or **'-c'**: The config of EfficientGCN. You must use this parameter in the command line or the program will output an error. There are 12 configs given in the **configs** folder, which can be illustrated in the following tabel.
 
-| config    | 2001   | 2002   | 2003     | 2004     |
+| config    | 2001   | 2002   | 2003     | 2004     | 
 | :-------: | :----: | :----: | :------: | :------: |
 | model     | B0     | B0     | B0       | B0       |
+| layer     | SG     | SG     | SG       | SG       |
 | benchmark | X-sub  | X-view | X-sub120 | X-set120 |
 
 | config    | 2005   | 2006   | 2007     | 2008     |
 | :-------: | :----: | :----: | :------: | :------: |
 | model     | B2     | B2     | B2       | B2       |
+| layer     | SG     | SG     | SG       | SG       |
 | benchmark | X-sub  | X-view | X-sub120 | X-set120 |
 
 | config    | 2009   | 2010   | 2011     | 2012     |
 | :-------: | :----: | :----: | :------: | :------: |
 | model     | B4     | B4     | B4       | B4       |
+| layer     | SG     | SG     | SG       | SG       |
+| benchmark | X-sub  | X-view | X-sub120 | X-set120 |
+
+| config    | 2013   | 2014   | 2015     | 2016     | 
+| :-------: | :----: | :----: | :------: | :------: |
+| model     | B0     | B0     | B0       | B0       |
+| layer     | EpSep  | EpSep  | EpSep    | EpSep    |
+| benchmark | X-sub  | X-view | X-sub120 | X-set120 |
+
+| config    | 2017   | 2018   | 2019     | 2020     |
+| :-------: | :----: | :----: | :------: | :------: |
+| model     | B2     | B2     | B2       | B2       |
+| layer     | EpSep  | EpSep  | EpSep    | EpSep    |
+| benchmark | X-sub  | X-view | X-sub120 | X-set120 |
+
+| config    | 2021   | 2022   | 2023     | 2024     |
+| :-------: | :----: | :----: | :------: | :------: |
+| model     | B4     | B4     | B4       | B4       |
+| layer     | EpSep  | EpSep  | EpSep    | EpSep    |
 | benchmark | X-sub  | X-view | X-sub120 | X-set120 |
 
 * (2) **'--work_dir'** or **'-w'**: The path to workdir, for saving checkpoints and other running files. Default is **'./workdir'**.
@@ -140,7 +161,13 @@ where **'-ex'** can be removed if the data file **'extraction_`<config>`.npz'** 
 
 Top-1 Accuracy for the provided models on **NTU RGB+D 60 & 120** datasets.
 
-| models          | FLOPs  | parameters | NTU X-sub  | NTU X-view | NTU X-sub120 | NTU X-set120 |
+| models (SG)     | FLOPs  | parameters | NTU X-sub  | NTU X-view | NTU X-sub120 | NTU X-set120 |
+| :-------------: | :----: | :--------: | :--------: | :--------: | :----------: | :----------: |
+| EfficientGCN-B0 | 3.08G  | 0.32M      | 90.2%      | 94.9%      | 86.6%        | 85.0%        |
+| EfficientGCN-B2 | 6.12G  | 0.79M      | 91.4%      | 95.7%      | 88.0%        | 87.8%        |
+| EfficientGCN-B4 | 15.24G | 2.03M      | **92.1%**  | **96.1%**  | **88.7%**    | **88.9%**    |
+
+| models (EpSep)  | FLOPs  | parameters | NTU X-sub  | NTU X-view | NTU X-sub120 | NTU X-set120 |
 | :-------------: | :----: | :--------: | :--------: | :--------: | :----------: | :----------: |
 | EfficientGCN-B0 | 3.08G  | 0.32M      | 89.9%      | 94.7%      | 85.9%        | 84.3%        |
 | EfficientGCN-B2 | 6.12G  | 0.79M      | 90.9%      | 95.5%      | 87.9%        | 88.0%        |

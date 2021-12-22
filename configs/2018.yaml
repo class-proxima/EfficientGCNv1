@@ -2,7 +2,7 @@
 gpus: [0,1]
 seed: 1
 debug: False
-pretrained_path:
+pretrained_path: 
 work_dir: ./workdir
 no_progress_bar: False
 
@@ -13,14 +13,14 @@ visualization_frames: []
 
 # Data Loader
 # ntu-xsub, ntu-xview, ntu-xsub120, ntu-xset120
-dataset: ntu-xset120
+dataset: ntu-xview
 dataset_args:
   ntu:
-    train_batch_size: 16
-    eval_batch_size: 16
+    train_batch_size: 32
+    eval_batch_size: 32
     num_frame: 288
     inputs: JVB
-    transform: False
+    transform: True
     root_folder: ./data/npy_dataset
     ntu60_path: ./data/raw_skeleton/nturgbd_skeletons_s001_to_s017
     ntu120_path: ./data/raw_skeleton/nturgbd_skeletons_s018_to_s032
@@ -33,12 +33,12 @@ model_args:
   fusion_stage: 2
   act_type: swish
   att_type: stja
-  layer_type: SG
+  layer_type: Sep
   drop_prob: 0.25
   kernel_size: [5,2]
   scale_args: [1.2,1.35]
-  expand_ratio: 0
-  reduct_ratio: 2
+  expand_ratio: 2
+  reduct_ratio: 4
   bias: True
   edge: True
 
