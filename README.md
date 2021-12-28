@@ -163,9 +163,9 @@ Top-1 Accuracy for the provided models on **NTU RGB+D 60 & 120** datasets.
 
 | models (SG)     | FLOPs  | parameters | NTU X-sub  | NTU X-view | NTU X-sub120 | NTU X-set120 |
 | :-------------: | :----: | :--------: | :--------: | :--------: | :----------: | :----------: |
-| EfficientGCN-B0 | 3.08G  | 0.32M      | 90.2%      | 94.9%      | 86.6%        | 85.0%        |
-| EfficientGCN-B2 | 6.12G  | 0.79M      | 91.4%      | 95.7%      | 88.0%        | 87.8%        |
-| EfficientGCN-B4 | 15.24G | 2.03M      | **92.1%**  | **96.1%**  | **88.7%**    | **88.9%**    |
+| EfficientGCN-B0 | 2.73G  | 0.29M      | 90.2%      | 94.9%      | 86.6%        | 85.0%        |
+| EfficientGCN-B2 | 4.05G  | 0.51M      | 91.4%      | 95.7%      | 88.0%        | 87.8%        |
+| EfficientGCN-B4 | 8.36G  | 1.10M      | **92.1%**  | **96.1%**  | **88.7%**    | **88.9%**    |
 
 | models (EpSep)  | FLOPs  | parameters | NTU X-sub  | NTU X-view | NTU X-sub120 | NTU X-set120 |
 | :-------------: | :----: | :--------: | :--------: | :--------: | :----------: | :----------: |
