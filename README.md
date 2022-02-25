@@ -32,7 +32,7 @@ pip install -r scripts/requirements.txt
 Our models are experimented on the **NTU RGB+D 60 & 120** datasets, which can be downloaded from 
 [here](http://rose1.ntu.edu.sg/datasets/actionrecognition.asp).
 
-There are 302 samples of **NTU RGB+D 60** and 532 samples of **NTU RGB+D 120** need to be ignored, which are shown in the **'src/preprocess/ignore.txt'**.
+There are 302 samples of **NTU RGB+D 60** and 532 samples of **NTU RGB+D 120** need to be ignored, which are shown in the **'src/reader/ignore.txt'**.
 
 ### 2.3 Pretrained Models
 
